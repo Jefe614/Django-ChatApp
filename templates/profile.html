@@ -1,0 +1,148 @@
+<!-- profile.html -->
+<style>
+    /* profile.css */
+    
+    .card {
+        background-color: #fff;
+        border-radius: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 400px;
+        width: 100%;
+        margin: 20px auto;
+    }
+    
+    .profile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #ccc;
+        border-radius: 25px;
+    }
+    
+    .profile img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+    
+    .user-details {
+        flex-grow: 1;
+        overflow-y: auto;
+    }
+    
+    .user-details p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .invite {
+        background-color: #ccc;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        overflow-y: auto;
+    }
+    
+    .Account {
+        background-color: #ccc;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        overflow-y: auto;
+    }
+    
+    .Privacy {
+        background-color: #ccc;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        overflow-y: auto;
+    }
+    
+    .Help {
+        background-color: #ccc;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        overflow-y: auto;
+    }
+    
+    ul {
+        list-style: none;
+        padding: 0;
+        /* Remove default padding */
+        margin: 0;
+        /* Remove default margin */
+    }
+    /* Add more styles as needed */
+</style>
+{% extends 'base.html' %} {% block content %}{% load static %}
+<div class="card">
+    <div class="profile">
+        <a href="{% url 'home' %}">
+            <img src="{% static 'images/back.png' %}" alt="" style="width: 35px; height: 28px; margin-bottom: -5px;margin-right: 5px;">
+        </a>
+        <img src="{% static 'images/upwork.jpg' %}" alt="Profile Picture">
+        <div class="name">{{ user.username }}
+            <p>Email: {{ user.email }}</p>
+        </div>
+
+    </div>
+
+    <div class="user-details">
+
+        <!-- Add more user details as needed -->
+
+        <!-- Edit Profile Link -->
+        <a href="#">Edit Profile</a>
+        <div class="Account">
+            <h5>Account</h5>
+            <ul>
+                <li>Security notifications</li>
+                <li>change number</li>
+                <li>Two-step-verification</li>
+                <li>Delete my account</li>
+            </ul>
+        </div>
+        <div class="privacy">
+            <h5>Privacy</h5>
+            <ul>
+                <li>Block contacts</li>
+                <li>disappearing messages</li>
+            </ul>
+        </div>
+        <div class="help">
+            <h5>Help</h5>
+            <ul>
+                <li>Help centre</li>
+                <li>contact us</li>
+                <li>privacy policy</li>
+
+            </ul>
+        </div>
+        <div class="invite">
+            <h5>Invite a friend</h5>
+
+        </div>
+    </div>
+
+
+    <!-- Add more sections as needed -->
+
+
+</div>
+{% endblock %}

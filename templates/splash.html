@@ -1,0 +1,87 @@
+<!-- splash.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Splash</title>
+    <!-- Add any additional styles or links as needed -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: rgb(107, 8, 236);
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            display: flex;
+            margin: 0;
+        }
+        
+        .card {
+            background-color: #140202;
+            border-radius: 30px;
+            /* Adjust the border radius as needed */
+            box-shadow: 0 4px 8px rgba(5, 5, 5, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            /* Set a max-width for the card */
+            width: 100%;
+            height: 600px;
+            transition: box-shadow 0.3s ease-in-out;
+            max-height: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #splash-content {
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.5rem;
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeIn 5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 2;
+            }
+        }
+        
+        #splash-content img {
+            width: 100%;
+            height: 200px;
+            /* Adjust the max-height as needed */
+            border-radius: 50px;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div id="splash-content">
+            <img src="{% static 'images/logo.png' %}" alt="Startup Logo">
+
+
+            <!-- Add any additional content or message -->
+        </div>
+    </div>
+    <script>
+        // Redirect to the home page after a delay (e.g., 3 seconds)
+        setTimeout(function() {
+            window.location.href = "{% url 'home' %}";
+        }, 10000);
+    </script>
+</body>
+
+</html>
